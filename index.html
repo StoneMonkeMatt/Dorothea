@@ -14,6 +14,7 @@
       --emergency-bg: #1a1a1a;
       --emergency-text: #ffffff;
       --emergency-accent: #ff0000;
+      --toggle-bg: #f3f4f6;
     }
 
     * {
@@ -28,6 +29,49 @@
       margin: 0;
       padding: 0;
       -webkit-font-smoothing: antialiased;
+    }
+
+    /* Language Toggle Logic (No JS) */
+    #lang-toggle {
+      display: none;
+    }
+
+    .lang-switcher {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2rem;
+      gap: 0.5rem;
+    }
+
+    .lang-label {
+      padding: 0.5rem 1rem;
+      background: var(--toggle-bg);
+      border: 2px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+      color: var(--secondary-text);
+    }
+
+    #lang-toggle:not(:checked) ~ .container .label-en {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    #lang-toggle:checked ~ .container .label-cy {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    #lang-toggle:checked ~ .container .content-en {
+      display: none;
+    }
+
+    #lang-toggle:not(:checked) ~ .container .content-cy {
+      display: none;
     }
 
     .container {
@@ -189,88 +233,178 @@
       .emergency-label { color: black; }
       .emergency-subvalue { color: black; }
       a { text-decoration: none; color: black; }
+      .lang-switcher { display: none; }
     }
   </style>
 </head>
 <body>
+  <input type="checkbox" id="lang-toggle">
+
   <div class="container">
-    <header>
-      <h1>Dorothea Quarry</h1>
-      <p class="subtitle">Information, Safety & Heritage Guidance</p>
-    </header>
+    <nav class="lang-switcher">
+      <label for="lang-toggle" class="lang-label label-en">English</label>
+      <label for="lang-toggle" class="lang-label label-cy">Cymraeg</label>
+    </nav>
 
-    <main>
-      <p class="intro">
-        Dorothea Quarry is a former industrial site located in the Nantlle Valley. While it is a place of natural beauty and historical significance, it is a decommissioned work site containing various natural and man-made hazards. Visitors are advised to exercise caution and maintain awareness of their surroundings at all times.
-      </p>
+    <!-- English Content -->
+    <div class="content-en">
+      <header>
+        <h1>Dorothea Quarry</h1>
+        <p class="subtitle">Information, Safety & Heritage Guidance</p>
+      </header>
 
-      <section>
-        <h2>Safety Information</h2>
-        <ul>
-          <li><strong>Unstable Terrain:</strong> Rock faces and scree slopes are inherently unstable. Rockfalls can occur without warning. Avoid standing directly beneath cliffs or on overhanging edges.</li>
-          <li><strong>Deep Water:</strong> The flooded quarry pits are extremely deep and contain hidden machinery and cold-water hazards. Swimming is not advised due to the risk of cold-water shock and submerged obstacles.</li>
-          <li><strong>Falling Debris:</strong> Industrial structures and retaining walls are in a state of decay. Keep clear of buildings and avoid touching or climbing on masonry.</li>
-          <li><strong>Changing Conditions:</strong> Weather conditions in North Wales can shift rapidly. Fog, rain, and ice can make paths slippery and reduce visibility significantly.</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Access & Movement</h2>
-        <ul>
-          <li><strong>Stay on Paths:</strong> Please remain on established tracks and paths. Venturing off-trail increases the risk of falls and damage to the sensitive landscape.</li>
-          <li><strong>Route Map:</strong> A suggested map of the walking route can be found on <a href="https://explore.osmaps.com/route/3241744/dorothea-quarry-gwynedd-outline-only?lat=53.05412&lon=-4.24613&zoom=13.9013&style=Standard&type=2d" target="_blank" rel="noopener">OS Maps</a>.</li>
-          <li><strong>Do Not Climb:</strong> Climbing on any industrial structures, machinery, or designated rock faces is strictly prohibited for safety and preservation reasons.</li>
-          <li><strong>Respect Signage:</strong> Barriers, fences, and warning signs are placed for public safety. Do not cross fences or ignore warning notices.</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Environment & Wildlife</h2>
-        <ul>
-          <li><strong>Protected Species:</strong> The site is home to various protected wildlife, including nesting birds of prey. Avoid excessive noise and do not disturb any animals.</li>
-          <li><strong>Leave No Trace:</strong> Ensure all litter is taken home. Do not start fires or modify the landscape by building stone stacks or moving materials.</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Heritage Notice</h2>
-        <p>
-          Dorothea Quarry is an important site of industrial archaeology and part of the UNESCO World Heritage Slate Landscape of Northwest Wales. The structures represent generations of local labor and industrial innovation.
+      <main>
+        <p class="intro">
+          Dorothea Quarry is a former industrial site located in the Nantlle Valley. While it is a place of natural beauty and historical significance, it is a decommissioned work site containing various natural and man-made hazards. Visitors are advised to exercise caution and maintain awareness of their surroundings at all times.
         </p>
-        <p>
-          Please treat the site with respect and do not remove or damage any historical artifacts or stone. Professional guidance on heritage preservation can be found in the <a href="https://cadw.gov.wales/advice-support/historic-assets/conservation-principles" target="_blank" rel="noopener">CADW Conservation Principles</a>.
-        </p>
-      </section>
 
-      <section>
-        <h2>Contact & Reporting</h2>
-        <p>
-          To report heritage crime, site damage, or for general estate enquiries, please contact the Estate Manager:
-        </p>
-        <p>
-          <strong>Email:</strong> <a href="mailto:matt@activecymru.com">matt@activecymru.com</a>
-        </p>
-      </section>
+        <section>
+          <h2>Safety Information</h2>
+          <ul>
+            <li><strong>Unstable Terrain:</strong> Rock faces and scree slopes are inherently unstable. Rockfalls can occur without warning. Avoid standing directly beneath cliffs or on overhanging edges.</li>
+            <li><strong>Deep Water:</strong> The flooded quarry pits are extremely deep and contain hidden machinery and cold-water hazards. Swimming is not advised due to the risk of cold-water shock and submerged obstacles.</li>
+            <li><strong>Falling Debris:</strong> Industrial structures and retaining walls are in a state of decay. Keep clear of buildings and avoid touching or climbing on masonry.</li>
+            <li><strong>Changing Conditions:</strong> Weather conditions in North Wales can shift rapidly. Fog, rain, and ice can make paths slippery and reduce visibility significantly.</li>
+          </ul>
+        </section>
 
-      <div class="emergency-box">
-        <h2><span class="emergency-badge">URGENT</span> Emergency Information</h2>
-        <div class="emergency-grid">
-          <div>
-            <div class="emergency-label">Primary Action</div>
-            <div class="emergency-value">DIAL 999</div>
-            <div class="emergency-subvalue">Ask for Police & Mountain Rescue</div>
-          </div>
-          <div>
-            <div class="emergency-label">Location Information</div>
-            <div class="emergency-value">Dorothea Quarry</div>
-            <div class="emergency-subvalue">Talysarn, Gwynedd</div>
+        <section>
+          <h2>Access & Movement</h2>
+          <ul>
+            <li><strong>Stay on Paths:</strong> Please remain on established tracks and paths. Venturing off-trail increases the risk of falls and damage to the sensitive landscape.</li>
+            <li><strong>Route Map:</strong> A suggested map of the walking route can be found on <a href="https://explore.osmaps.com/route/3241744/dorothea-quarry-gwynedd-outline-only?lat=53.05412&lon=-4.24613&zoom=13.9013&style=Standard&type=2d" target="_blank" rel="noopener">OS Maps</a>.</li>
+            <li><strong>Do Not Climb:</strong> Climbing on any industrial structures, machinery, or designated rock faces is strictly prohibited for safety and preservation reasons.</li>
+            <li><strong>Respect Signage:</strong> Barriers, fences, and warning signs are placed for public safety. Do not cross fences or ignore warning notices.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Environment & Wildlife</h2>
+          <ul>
+            <li><strong>Protected Species:</strong> The site is home to various protected wildlife, including nesting birds of prey. Avoid excessive noise and do not disturb any animals.</li>
+            <li><strong>Leave No Trace:</strong> Ensure all litter is taken home. Do not start fires or modify the landscape by building stone stacks or moving materials.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Heritage Notice</h2>
+          <p>
+            Dorothea Quarry is an important site of industrial archaeology and part of the UNESCO World Heritage Slate Landscape of Northwest Wales. The structures represent generations of local labor and industrial innovation.
+          </p>
+          <p>
+            Please treat the site with respect and do not remove or damage any historical artifacts or stone. Professional guidance on heritage preservation can be found in the <a href="https://cadw.gov.wales/advice-support/historic-assets/conservation-principles" target="_blank" rel="noopener">CADW Conservation Principles</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>Contact & Reporting</h2>
+          <p>
+            To report heritage crime, site damage, or for general estate enquiries, please contact the Estate Manager:
+          </p>
+          <p>
+            <strong>Email:</strong> <a href="mailto:matt@activecymru.com">matt@activecymru.com</a>
+          </p>
+        </section>
+
+        <div class="emergency-box">
+          <h2><span class="emergency-badge">URGENT</span> Emergency Information</h2>
+          <div class="emergency-grid">
+            <div>
+              <div class="emergency-label">Primary Action</div>
+              <div class="emergency-value">DIAL 999</div>
+              <div class="emergency-subvalue">Ask for Police & Mountain Rescue</div>
+            </div>
+            <div>
+              <div class="emergency-label">Location Information</div>
+              <div class="emergency-value">Dorothea Quarry</div>
+              <div class="emergency-subvalue">Talysarn, Gwynedd</div>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
+
+    <!-- Welsh Content -->
+    <div class="content-cy">
+      <header>
+        <h1>Chwarel Dorothea</h1>
+        <p class="subtitle">Gwybodaeth, Diogelwch a Chanllawiau Treftadaeth</p>
+      </header>
+
+      <main>
+        <p class="intro">
+          Mae Chwarel Dorothea yn safle diwydiannol a gaewyd wedi ei leoli yng Nghanol Dyffryn Nantlle. Er ei bod yn lle o harddwch naturiol a phwysigrwydd hanesyddol, mae’n safle gwaith wedi ei ddatgysylltu gyda pheryglon naturiol a dynol. Argymhellir i ymwelwyr fod yn ofalus ac ymwybodol o’u hamgylchedd ar bob adeg.
+        </p>
+
+        <section>
+          <h2>Gwybodaeth Ddiogelwch</h2>
+          <ul>
+            <li><strong>Tir Ansefydlog:</strong> Mae wynebau creigiau a llethr creigiau’n anghyson. Gall creigiau syrthio heb rybudd. Peidiwch â sefyll yn union o dan clogwyni neu ar ymylon dros dro.</li>
+            <li><strong>Dŵr Dyfn:</strong> Mae pyllau’r chwarel wedi’u llawn dŵr ac yn hynod ddwfn, gyda pheiriannau cudd a pheryglon dŵr oer. Nid yw nofio’n argymhellol oherwydd y risg o sioc dŵr oer neu wrthrychau cudd.</li>
+            <li><strong>Sbaeniau a Chyfrannau:</strong> Mae strwythurau diwydiannol a waliau cynnal mewn cyflwr dirywiol. Cadwch draw o adeiladau a pheidiwch â chyffwrdd neu ddringo ar gerrig.</li>
+            <li><strong>Newidiadau Tywydd:</strong> Gall tywydd Gogledd Cymru newid yn gyflym. Gall niwl, glaw a rhew wneud llwybrau’n llithrig ac ostwng gwelededd.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Mynediad a Symudedd</h2>
+          <ul>
+            <li><strong>Arhoswch ar Llwybrau:</strong> Arhoswch ar lwybrau sefydledig. Mae mynd i ffwrdd o’r traciau’n cynyddu’r risg o syrthiadau ac yn niweidio’r dirwedd sensitif.</li>
+            <li><strong>Map Llwybr:</strong> Mae map argymelledig ar <a href="https://explore.osmaps.com/route/3241744/dorothea-quarry-gwynedd-outline-only?lat=53.05412&lon=-4.24613&zoom=13.9013&style=Standard&type=2d" target="_blank" rel="noopener">OS Maps</a>.</li>
+            <li><strong>Peidiwch â Dringo:</strong> Mae dringo ar unrhyw strwythurau diwydiannol, peiriannau neu wynebau creigiau penodol yn cael ei wahardd er diogelwch a chadwraeth.</li>
+            <li><strong>Parchu Arwyddion:</strong> Mae rhwystrau, ffensys ac arwyddion rhybudd wedi’u gosod er diogelwch y cyhoedd. Peidiwch â’u croesi nac anwybyddu arwyddion rhybudd.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Amgylchedd a Bywyd Gwyllt</h2>
+          <ul>
+            <li><strong>Orau Diogelu:</strong> Mae’r safle’n gartref i wahanol rywogaethau gwyllt diogelu, gan gynnwys adar pryfed sy’n nythu. Peidiwch â gwneud sŵn gormodol a pheidiwch â phoeni unrhyw anifeiliaid.</li>
+            <li><strong>Peidiwch â Gadael Olion:</strong> Sicrhewch fod pob sbwriel yn cael ei fynd adref. Peidiwch â chynnau tanau nac addasu’r dirwedd drwy adeiladu staciau creigiau neu symud deunyddiau.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Hysbysiad Treftadaeth</h2>
+          <p>
+            Mae Chwarel Dorothea yn safle hanesyddol pwysig ac yn rhan o Dirwedd Llosgfa Lechi Treftadaeth y Byd UNESCO Gogledd Orllewin Cymru. Mae’r strwythurau’n cynrychioli cenedlaethau o weithlu lleol a chreadigrwydd diwydiannol.
+          </p>
+          <p>
+            Trinwch y safle gyda pharch a pheidiwch â thynnu neu ddinistrio unrhyw arteffactau hanesyddol neu gerrig. Mae canllawiau proffesiynol ar gadw treftadaeth ar gael drwy <a href="https://cadw.gov.wales/advice-support/historic-assets/conservation-principles" target="_blank" rel="noopener">Egwyddorion Cadw</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>Cyswllt a Adrodd</h2>
+          <p>
+            I adrodd troseddau treftadaeth, difrod safle, neu am ymholiadau cyffredinol:
+          </p>
+          <p>
+            <strong>E-bost:</strong> <a href="mailto:matt@activecymru.com">matt@activecymru.com</a>
+          </p>
+        </section>
+
+        <div class="emergency-box">
+          <h2><span class="emergency-badge">ARGYFWNG</span> Gwybodaeth Brydlon</h2>
+          <div class="emergency-grid">
+            <div>
+              <div class="emergency-label">Cam Cyntaf</div>
+              <div class="emergency-value">DEWIS 999</div>
+              <div class="emergency-subvalue">Gofynnwch am yr Heddlu a’r Achub Mynydd</div>
+            </div>
+            <div>
+              <div class="emergency-label">Lleoliad</div>
+              <div class="emergency-value">Chwarel Dorothea</div>
+              <div class="emergency-subvalue">Talysarn, Gwynedd</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
 
     <footer>
-      <p>&copy; Dorothea Quarry Information Resource. Professional guidance for visitors.</p>
+      <p class="content-en">&copy; Dorothea Quarry Information Resource. Professional guidance for visitors.</p>
+      <p class="content-cy">&copy; Adnodd Gwybodaeth Chwarel Dorothea. Canllawiau proffesiynol ar gyfer ymwelwyr.</p>
     </footer>
   </div>
 </body>
