@@ -93,6 +93,18 @@
       color: var(--accent-color);
     }
 
+    a {
+      color: var(--accent-color);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: var(--secondary-text);
+    }
+
     .intro {
       font-size: 1.25rem;
       line-height: 1.5;
@@ -106,7 +118,7 @@
       color: var(--emergency-text);
       padding: 2rem;
       border-radius: 4px;
-      margin-top: 4rem;
+      margin-top: 3rem;
     }
 
     .emergency-box h2 {
@@ -176,6 +188,7 @@
       .emergency-box { border: 2px solid black; color: black; background: white; }
       .emergency-label { color: black; }
       .emergency-subvalue { color: black; }
+      a { text-decoration: none; color: black; }
     }
   </style>
 </head>
@@ -221,7 +234,20 @@
       <section>
         <h2>Heritage Notice</h2>
         <p>
-          Dorothea Quarry is an important site of industrial archaeology and part of the UNESCO World Heritage Slate Landscape of Northwest Wales. The structures represent generations of local labor and industrial innovation. Please treat the site with respect and do not remove or damage any historical artifacts or stone.
+          Dorothea Quarry is an important site of industrial archaeology and part of the UNESCO World Heritage Slate Landscape of Northwest Wales. The structures represent generations of local labor and industrial innovation.
+        </p>
+        <p>
+          Please treat the site with respect and do not remove or damage any historical artifacts or stone. Professional guidance on heritage preservation can be found in the <a href="https://cadw.gov.wales/advice-support/historic-assets/conservation-principles" target="_blank" rel="noopener">CADW Conservation Principles</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Contact & Reporting</h2>
+        <p>
+          To report heritage crime, site damage, or for general estate enquiries, please contact the Estate Manager:
+        </p>
+        <p>
+          <strong>Email:</strong> <a href="mailto:matt@activecymru.com">matt@activecymru.com</a>
         </p>
       </section>
 
