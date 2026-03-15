@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dorothea Quarry | History & Heritage</title>
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1a1a1a;
+      --secondary-text: #4a4a4a;
+      --accent-color: #000000;
+      --border-color: #e0e0e0;
+      --emergency-bg: #1a1a1a;
+      --emergency-text: #ffffff;
+      --emergency-accent: #ff0000;
+      --toggle-bg: #f3f4f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Language Toggle Logic (No JS) */
+    #lang-toggle {
+      display: none;
+    }
+
+    .lang-switcher {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2rem;
+      gap: 0.5rem;
+    }
+
+    .lang-label {
+      padding: 0.5rem 1rem;
+      background: var(--toggle-bg);
+      border: 2px solid transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
+      color: var(--secondary-text);
+    }
+
+    #lang-toggle:not(:checked) ~ .container .label-en {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    #lang-toggle:checked ~ .container .label-cy {
+      background: var(--accent-color);
+      color: white;
+    }
+
+    #lang-toggle:checked ~ .container .content-en {
+      display: none;
+    }
+
+    #lang-toggle:not(:checked) ~ .container .content-cy {
+      display: none;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    header {
+      border-bottom: 6px solid var(--accent-color);
+      margin-bottom: 2.5rem;
+      padding-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: 0;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      font-size: 1.125rem;
+      color: var(--secondary-text);
+      font-weight: 500;
+      margin-top: 0.5rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0 0 1rem 0;
+      letter-spacing: 0.05em;
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0 0 0 1.25rem;
+      list-style-type: disc;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    strong {
+      font-weight: 700;
+      color: var(--accent-color);
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: var(--secondary-text);
+    }
+
+    .nav-links {
+      margin-bottom: 2rem;
+    }
+
+    .image-container {
+      margin: 1.5rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .history-image {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .history-image:hover {
+      transform: scale(1.02);
+    }
+
+    .image-link {
+      display: block;
+      text-decoration: none !important;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.875rem;
+      color: var(--secondary-text);
+      text-align: center;
+    }
+
+    @media (min-width: 600px) {
+      h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media print {
+      .lang-switcher, .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <input type="checkbox" id="lang-toggle">
+
+  <div class="container">
+    <nav class="lang-switcher">
+      <label for="lang-toggle" class="lang-label label-en">English</label>
+      <label for="lang-toggle" class="lang-label label-cy">Cymraeg</label>
+    </nav>
+
+    <nav class="nav-links">
+      <a href="/" class="content-en">← Back to Safety Information</a>
+      <a href="/" class="content-cy">← Yn ôl i Wybodaeth Ddiogelwch</a>
+    </nav>
+
+    <!-- English Content -->
+    <div class="content-en">
+      <header>
+        <h1>A Journey Through Time</h1>
+        <p class="subtitle">Exploring the Dorothea Quarry Site</p>
+      </header>
+
+      <main>
+        <p>
+          Welcome to the remains of the Dorothea Quarry, a landscape that stands as a powerful testament to North Wales's slate industry, now recognised as a UNESCO World Heritage Site. This area is not just a single quarry, but a collection of industrial, domestic, and community relics that tell the story of the people who lived and worked here. As you explore, you'll be walking through a landscape that was reshaped by industry, and even a village that was moved to make way for it.
+        </p>
+
+        <p>
+          The village of Talysarn itself has a unique story. As the mighty Dorothea quarry expanded in the 19th century, it literally stood in the way. A decision was taken to relocate the entire village approximately 1km to the west, creating the "New" Penysarn we know today. The original village was gradually abandoned, its ruins now being reclaimed by nature, offering an evocative glimpse into the past.
+        </p>
+
+        <section>
+          <h2>The Cornish Beam Engine: A Masterpiece of Engineering</h2>
+          <div class="image-container">
+            <a href="/assets/images/image1.jpg" target="_blank" class="image-link">
+              <img src="/assets/images/image1.jpg" alt="Cornish Beam Engine" class="history-image" referrerPolicy="no-referrer">
+            </a>
+            <a href="/assets/images/image2.jpg" target="_blank" class="image-link">
+              <img src="/assets/images/image2.jpg" alt="Cornish Beam Engine Detail" class="history-image" referrerPolicy="no-referrer">
+            </a>
+          </div>
+          <p>
+            The heart of the site is the Dorothea Quarry pumping installation, a Scheduled Monument. This complex was built for one crucial purpose: to remove water from the ever-deepening quarry pit, which plunged well below the water table. It is an incomparably rich industrial archaeological environment.
+          </p>
+          <p>
+            The centrepiece is the tall, slate-built engine house, bearing a date stone of 1904. Inside rests a true marvel: a Cornish beam engine. This engine holds a world record: it was the last Cornish Beam Engine to be installed from new anywhere in the world. Built in 1904 by Holman Bros. of Camborne, Cornwall, it is also the youngest beam engine still standing in its original setting.
+          </p>
+          <p>The statistics of this machine are staggering:</p>
+          <ul>
+            <li><strong>The Beam:</strong> Made of wrought iron—a very unusual feature—it is about 34ft long, 6ft deep at the centre, and weighs around 11 tons.</li>
+            <li><strong>The Cylinder:</strong> With a bore of 5ft 8in and a stroke of 10ft, it stands over 14ft tall.</li>
+            <li><strong>Operation:</strong> It normally ran at a stately 5 strokes per minute, powered by steam at 38psi, lifting water from a pump shaft 460ft deep.</li>
+            <li><strong>The Complex:</strong> Uniquely, it survives complete with its original boiler house containing two Lancashire-type boilers, an open fuel hopper with a ramp, and the remains of a windlass.</li>
+          </ul>
+          <p>
+            The engine worked tirelessly until 1952 when its boilers were condemned. It had one last hurrah in 1956 when the new electric pumps failed, proving the old technology was still reliable. Restoration efforts in the 1970s gave hope for its future, but changes in site ownership have left this world-class monument in a vulnerable state.
+          </p>
+        </section>
+
+        <section>
+          <h2>The Mill and the Ghost of a Deal</h2>
+          <div class="image-container">
+            <a href="/assets/images/image3.jpg" target="_blank" class="image-link">
+              <img src="/assets/images/image3.jpg" alt="The Mill Office" class="history-image" referrerPolicy="no-referrer">
+            </a>
+          </div>
+          <p>
+            Nearby are the remains of the Mill Office. It was here, on the 12th of November 1901, that a pivotal meeting took place. Mr. Brindley, from Evans and Sons, Pump Manufacturers, met with the quarry manager, W. J. Griffith. Their discussion? The sinking of a shaft for the new pumping engine you see before you—a decision that would lead to the installation of the very engine that came to define the site.
+          </p>
+        </section>
+
+        <section>
+          <h2>Plas Talysarn: The "Dragon's" Hall</h2>
+          <div class="image-container">
+            <a href="/assets/images/image4.jpg" target="_blank" class="image-link">
+              <img src="/assets/images/image4.jpg" alt="Plas Talysarn Ruins" class="history-image" referrerPolicy="no-referrer">
+            </a>
+          </div>
+          <p>
+            Further on, you'll encounter the poignant ruins of Plas Talysarn, once a grand hall built on the site of a 17th-century farmhouse. This was the home of John Robinson, the larger-than-life owner of the Talysarn Slate Quarry from the 1870s.
+          </p>
+          <p>
+            Robinson was a complex character. A Victorian "dragon" from Liverpool, he cast a net of ambitious, sometimes half-real, schemes across North Wales in pursuit of wealth—the fabled "John Robinson Tramway," whose locomotives existed only on paper, being a prime example. Yet, local historian Prof. Gwynfor Pierce Jones noted he was also a much-loved and respected figure, a man of the people who was generous to those in need and even paid for the construction of St. John's Church in Talysarn. It is said he could do the work of his quarrymen as well as manage the company, earning their respect and allegiance.
+          </p>
+          <p>
+            In its heyday, the hall was very swish, with extensive gardens and an ornamental fountain. This fountain was built as a 21st birthday present for the last surviving daughter of the Plas. The statue from the fountain was sold in the 1950s, and despite attempts to trace it to Betws-y-Coed or Llangollen, its location remains a mystery.
+          </p>
+          <p>
+            John Robinson died in 1900, and his son Thomas took over, only to pass away himself in 1905. The family held onto the house until it was sold to the Dorothea Company in 1942, but it was soon abandoned and fell into ruin.
+          </p>
+        </section>
+
+        <section>
+          <h2>Echoes of Transport: Rails and Horses</h2>
+          <p>The story of Dorothea is also a story of transport.</p>
+          <ul>
+            <li>
+              <strong>The Locomotive "Dorothea":</strong> This Hunslet locomotive, new from Leeds in 1901, spent its entire working life at the quarry, hauling slate on the tips from the East Pyramid. It cost £587.19s.5d. After leaving the site in 1970, it is now preserved and running on the Launceston Steam Railway.
+              <div class="image-container">
+                <a href="/assets/images/image5.jpg" target="_blank" class="image-link">
+                  <img src="/assets/images/image5.jpg" alt="Locomotive Dorothea" class="history-image" referrerPolicy="no-referrer">
+                </a>
+              </div>
+            </li>
+            <li>
+              <strong>The Nantlle Railway:</strong> This horse-powered tramway, of a unique 3ft 6in gauge, originally ran from Pen yr Orsedd Quarry to Caernarfon. Remarkably, it remained horse-drawn until just a couple of years before its closure in 1963.
+              <div class="image-container">
+                <a href="/assets/images/image6.jpg" target="_blank" class="image-link">
+                  <img src="/assets/images/image6.jpg" alt="Nantlle Railway" class="history-image" referrerPolicy="no-referrer">
+                </a>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Prince and Corwen</h2>
+          <div class="image-container">
+            <a href="/assets/images/image7.jpg" target="_blank" class="image-link">
+              <img src="/assets/images/image7.jpg" alt="Prince and Corwen" class="history-image" referrerPolicy="no-referrer">
+            </a>
+          </div>
+          <p>
+            No account of Dorothea is complete without its two celebrity horses—the last to haul slate from Pen yr Orsedd. Corwen, the white mare, and her son, Prince, were the dynamic duo capable of doing the job by themselves. A wonderful photograph by Geoff Charles captures them against the stunning backdrop of Mynydd Drws y Coed and Yr Wyddfa (Snowdon).
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <!-- Welsh Content -->
+    <div class="content-cy">
+      <header>
+        <h1>Taith Trwy Amser</h1>
+        <p class="subtitle">Archwilio Safle Chwarel Dorothea</p>
+      </header>
+
+      <main>
+        <p>
+          Croeso i weddillion Chwarel Dorothea, tirwedd sy'n dyst pwerus i ddiwydiant llechi Gogledd Cymru, sydd bellach wedi'i chydnabod fel Safle Treftadaeth y Byd UNESCO. Nid un chwarel yn unig yw'r ardal hon, ond casgliad o olion diwydiannol, domestig a chymunedol sy'n adrodd hanes y bobl a oedd yn byw ac yn gweithio yma. Wrth i chi archwilio, byddwch yn cerdded trwy dirwedd a gafodd ei hail-lunio gan ddiwydiant, a hyd yn oed pentref a gafodd ei symud i wneud lle iddo.
+        </p>
+
+        <p>
+          Mae gan bentref Talysarn ei hun hanes unigryw. Wrth i chwarel fawr Dorothea ehangu yn y 19eg ganrif, roedd y pentref yn llythrennol yn y ffordd. Penderfynwyd adleoli'r pentref cyfan tua 1km i'r gorllewin, gan greu'r "Penysarn Newydd" rydym yn ei adnabod heddiw. Cafodd y pentref gwreiddiol ei adael yn raddol, a'i adfeilion bellach yn cael eu hawlio'n ôl gan natur, gan gynnig cipolwg atgofus ar y gorffennol.
+        </p>
+
+        <section>
+          <h2>Peiriant Trawst Cornish: Campwaith Peirianneg</h2>
+          <div class="image-container">
+            <a href="/assets/images/image1.jpg" target="_blank" class="image-link">
+              <img src="/assets/images/image1.jpg" alt="Peiriant Trawst Cornish" class="history-image" referrerPolicy="no-referrer">
+            </a>
+            <a href="/assets/images/image2.jpg" target="_blank" class="image-link">
+              <img src="/assets/images/image2.jpg" alt="Manylion Peiriant Trawst Cornish" class="history-image" referrerPolicy="no-referrer">
+            </a>
+          </div>
+          <p>
+            Calon y safle yw gosodiad pwmpio Chwarel Dorothea, Heneb Gofrestredig. Adeiladwyd y cymhleth hwn at un diben hanfodol: i dynnu dŵr o bwll y chwarel a oedd yn dyfnhau drwy'r amser, ac a oedd yn plymio ymhell o dan y lefel dŵr. Mae'n amgylchedd archaeolegol diwydiannol eithriadol o gyfoethog.
+          </p>
+          <p>
+            Y canolbwynt yw'r tŷ peiriant tal, wedi'i adeiladu o lechi, sy'n dwyn carreg ddyddiad 1904. Y tu mewn mae rhyfeddod go iawn: peiriant trawst Cornish. Mae'r peiriant hwn yn dal record byd: hwn oedd y Peiriant Trawst Cornish olaf i gael ei osod yn newydd unrhyw le yn y byd. Wedi'i adeiladu ym 1904 gan Holman Bros. o Camborne, Cernyw, hwn hefyd yw'r peiriant trawst ieuengaf sy'n dal i sefyll yn ei leoliad gwreiddiol.
+          </p>
+          <p>Mae ystadegau'r peiriant hwn yn syfrdanol:</p>
+          <ul>
+            <li><strong>Y Trawst:</strong> Wedi'i wneud o haearn gyr—nodwedd anarferol iawn—mae tua 34 troedfedd o hyd, 6 troedfedd o ddyfnder yn y canol, ac yn pwyso tua 11 tunnell.</li>
+            <li><strong>Y Silindr:</strong> Gyda thwll o 5 troedfedd 8 modfedd a strôc o 10 troedfedd, mae dros 14 troedfedd o daldra.</li>
+            <li><strong>Gweithrediad:</strong> Roedd fel arfer yn rhedeg ar 5 strôc y funud, wedi'i bweru gan ager ar 38psi, gan godi dŵr o siafft bwmpio 460 troedfedd o ddyfnder.</li>
+            <li><strong>Y Cymhleth:</strong> Yn unigryw, mae'n goroesi'n gyflawn gyda'i dŷ boeler gwreiddiol yn cynnwys dau foeler math Swydd Gaerhirfryn, hopran tanwydd agored gyda ramp, ac olion windlass.</li>
+          </ul>
+          <p>
+            Gweithiodd y peiriant yn ddiflino tan 1952 pan gafodd ei foeleri eu condemnio. Cafodd un cyfle olaf ym 1956 pan fethodd y pympiau trydan newydd, gan brofi bod yr hen dechnoleg yn dal yn ddibynadwy. Rhoddodd ymdrechion adfer yn y 1970au obaith am ei ddyfodol, ond mae newidiadau ym mherchnogaeth y safle wedi gadael yr heneb hon o safon fyd-eang mewn cyflwr bregus.
+          </p>
+        </section>
+
+        <section>
+          <h2>Y Felin a Chysgod Bargen</h2>
+          <div class="image-container">
+            <a href="/assets/images/image3.jpg" target="_blank" class="image-link">
+              <img src="/assets/images/image3.jpg" alt="Swyddfa'r Felin" class="history-image" referrerPolicy="no-referrer">
+            </a>
+          </div>
+          <p>
+            Gerllaw mae olion Swyddfa'r Felin. Yma, ar y 12fed o Dachwedd 1901, y cynhaliwyd cyfarfod tyngedfennol. Cyfarfu Mr. Brindley, o Evans and Sons, Gweithgynhyrchwyr Pympiau, â rheolwr y chwarel, W. J. Griffith. Eu trafodaeth? Suddo siafft ar gyfer y peiriant pwmpio newydd a welwch o'ch blaen—penderfyniad a fyddai'n arwain at osod y peiriant hwnnw a ddaeth i ddiffinio'r safle.
+          </p>
+        </section>
+
+        <section>
+          <h2>Plas Talysarn: Neuadd y "Ddraig"</h2>
+          <div class="image-container">
+            <a href="/assets/images/image4.jpg" target="_blank" class="image-link">
+              <img src="/assets/images/image4.jpg" alt="Adfeilion Plas Talysarn" class="history-image" referrerPolicy="no-referrer">
+            </a>
+          </div>
+          <p>
+            Ymhellach ymlaen, byddwch yn dod ar draws adfeilion teimladwy Plas Talysarn, a oedd unwaith yn neuadd fawreddog wedi'i hadeiladu ar safle ffermdy o'r 17eg ganrif. Dyma oedd cartref John Robinson, perchennog mawr Chwarel Lechi Talysarn o'r 1870au.
+          </p>
+          <p>
+            Roedd Robinson yn gymeriad cymhleth. "Draig" Fictoraidd o Lerpwl, taflodd rwyd o gynlluniau uchelgeisiol, rhai ohonynt yn hanner-real, ar draws Gogledd Cymru ar drywydd cyfoeth—y "John Robinson Tramway" chwedlonol, y roedd ei locomotifau'n bodoli ar bapur yn unig, yn enghraifft wych. Ac eto, nododd yr hanesydd lleol yr Athro Gwynfor Pierce Jones ei fod hefyd yn ffigwr uchel ei barch a oedd yn annwyl gan lawer, gŵr y bobl a oedd yn hael i'r rhai mewn angen a hyd yn oed yn talu am adeiladu Eglwys Sant Ioan yn Nhalyarn. Dywedir y gallai wneud gwaith ei chwarelwyr cystal â rheoli'r cwmni, gan ennill eu parch a'u teyrngarwch.
+          </p>
+          <p>
+            Yn ei anterth, roedd y neuadd yn ysblennydd iawn, gyda gerddi helaeth a ffynnon addurniadol. Adeiladwyd y ffynnon hon fel anrheg pen-blwydd yn 21 oed i ferch olaf y Plas a oroesodd. Gwerthwyd y cerflun o'r ffynnon yn y 1950au, ac er gwaethaf ymdrechion i'w olrhain i Fetws-y-Coed neu Langollen, mae ei leoliad yn parhau i fod yn ddirgelwch.
+          </p>
+          <p>
+            Bu farw John Robinson ym 1900, a chymerodd ei fab Thomas drosodd, dim ond i farw ei hun ym 1905. Daliodd y teulu'r tŷ nes iddo gael ei werthu i Gwmni Dorothea ym 1942, ond cafodd ei adael yn fuan a syrthiodd i adfeilion.
+          </p>
+        </section>
+
+        <section>
+          <h2>Atgofion o Drafnidiaeth: Rheiliau a Cheffylau</h2>
+          <p>Mae hanes Dorothea hefyd yn hanes trafnidiaeth.</p>
+          <ul>
+            <li>
+              <strong>Y Locomotif "Dorothea":</strong> Treuliodd y locomotif Hunslet hwn, a oedd yn newydd o Leeds ym 1901, ei holl fywyd gwaith yn y chwarel, gan gludo llechi ar y tomenni o'r Pyramid Dwyreiniol. Costiodd £587.19s.5d. Ar ôl gadael y safle ym 1970, mae bellach wedi'i gadw ac yn rhedeg ar Reilffordd Ager Launceston.
+              <div class="image-container">
+                <a href="/assets/images/image5.jpg" target="_blank" class="image-link">
+                  <img src="/assets/images/image5.jpg" alt="Locomotif Dorothea" class="history-image" referrerPolicy="no-referrer">
+                </a>
+              </div>
+            </li>
+            <li>
+              <strong>Rheilffordd Nantlle:</strong> Roedd y dramffordd hon a bwerwyd gan geffylau, o led 3 troedfedd 6 modfedd unigryw, yn rhedeg yn wreiddiol o Chwarel Pen yr Orsedd i Gaernarfon. Yn rhyfeddol, parhaodd i gael ei thynnu gan geffylau tan ychydig flynyddoedd cyn iddi gau ym 1963.
+              <div class="image-container">
+                <a href="/assets/images/image6.jpg" target="_blank" class="image-link">
+                  <img src="/assets/images/image6.jpg" alt="Rheilffordd Nantlle" class="history-image" referrerPolicy="no-referrer">
+                </a>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Prince a Corwen</h2>
+          <div class="image-container">
+            <a href="/assets/images/image7.jpg" target="_blank" class="image-link">
+              <img src="/assets/images/image7.jpg" alt="Prince a Corwen" class="history-image" referrerPolicy="no-referrer">
+            </a>
+          </div>
+          <p>
+            Nid oes hanes o Dorothea yn gyflawn heb ei ddau geffyl enwog—y rhai olaf i gludo llechi o Ben yr Orsedd. Corwen, y gaseg wen, a'i mab, Prince, oedd y ddeuawd ddeinamig a oedd yn gallu gwneud y gwaith ar eu pennau eu hunain. Mae ffotograff gwych gan Geoff Charles yn eu dal yn erbyn cefndir syfrdanol Mynydd Drws y Coed ac Yr Wyddfa.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <p class="content-en">&copy; Dorothea Quarry Information Resource. Professional guidance for visitors. <br> <a href="/thanks.html">Acknowledgements & Thanks</a></p>
+      <p class="content-cy">&copy; Adnodd Gwybodaeth Chwarel Dorothea. Canllawiau proffesiynol ar gyfer ymwelwyr. <br> <a href="/thanks.html">Cydnabyddiaeth a Diolch</a></p>
+    </footer>
+  </div>
+</body>
+</html>
